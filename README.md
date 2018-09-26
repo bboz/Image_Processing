@@ -1,2 +1,2 @@
 # Image_Processing
-My homeworks for the Image Processing.
+My homeworks for the Image Processing lesson.
