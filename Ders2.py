@@ -36,5 +36,4 @@ def my_function_1(my_img):
     print("en kucuk mavi renk degeri : ",np.min(my_img[:,:,2]))
     print("en kucuk mavi renk degeri : ",np.max(my_img[:,:,2]))
     
-
 my_function_1(im_1)
