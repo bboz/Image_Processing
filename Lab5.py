@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[1]:
-
-
 import numpy as np #resim üzerinden bir parça alıp onu mask ile çarpabilir toplayabilir herhangibir işleme tabi tutabiliriz.
 import matplotlib.pyplot as plt
 mask_0=np.array([1,1,1,1,1,1,1,1,1]).reshape(3,3)
@@ -17,10 +13,6 @@ print("------------")
 print(mask_1*mask_2)
 print("------------")
 print(mask_1*mask_0)
-
-
-# In[2]:
-
 
 def get_distance(v,w=[1/3,1/3,1/3]):   #w ağırlık değeri
     a,b,c=v[0],v[1],v[2]
@@ -38,25 +30,13 @@ def convert_rgb_to_gray_level(im_1):
             im_2[i,j]=get_distance(im_1[i,j,:])
     return im_2
 
-
-# In[4]:
-
-
 sum(sum(mask_1*mask_0))
-
-
-# In[5]:
-
 
 def get_default_mask_for_mean():
     return np.array([1,1,1,1,1,1,1,1,1]).reshape(3,3)/9
 def apply_mask(part_of_image):
     mask=get_default_mask_for_mean()
     return np.average(part_of_image)
-
-
-# In[10]:
-
 
 im1=plt.imread("1.jpg")       #ortalama ile yapılan örnek
 im1=convert_rgb_to_gray_level(im1)
@@ -73,50 +53,22 @@ for i in range(1,m):
 plt.imshow(im2,cmap='gray')
 plt.show()
 
-
-# In[8]:
-
-
 mask_1=np.random.randint(5,size=9).reshape(3,3)
 mask_1
 
-
-# In[7]:
-
-
 mask_1[:,0:1]
-
-
-# In[12]:
-
 
 im2[3:6,10:13]
 
-
-# In[28]:
-
-
 s_1=im2[3:6,10:13].reshape(9)
-
-
-# In[30]:
-
 
 s_1.sort()
 s_1[5]
-
-
-# In[35]:
-
 
 def get_median(poi):
     s_1=poi.reshape(1,9)
     s_1.sort()
     return s_1[0,4]
-
-
-# In[36]:
-
 
 im1=plt.imread("1.jpg")   # ortanca ile yapılan örnek
 im1=convert_rgb_to_gray_level(im1)
@@ -132,10 +84,3 @@ for i in range(1,m-1):
 
 plt.imshow(im2,cmap='gray')
 plt.show()
-
-
-# In[ ]:
-
-
-
-
